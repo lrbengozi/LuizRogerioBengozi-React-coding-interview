@@ -23,6 +23,11 @@ const appRouter = createBrowserRouter([
             path: '/contacts',
             element: <ContactListPage />,
             id: routeDefinitions.contactsList.id
+          },
+          {
+            path: '/contacts/edit/:id',
+            element: <div>Not implemented</div>,
+            id: routeDefinitions.contactEdit.id
           }
         ]
       }

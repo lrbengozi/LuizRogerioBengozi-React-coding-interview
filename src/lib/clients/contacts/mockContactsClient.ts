@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-import { IPerson, PersonGender } from '@lib/models/person';
+import { IPerson } from '@lib/models/person';
 import { IContactsClient, IContactListArgs, IContactListResult } from './contactTypes';
 
 function seedContacts(count: number) {
@@ -11,9 +11,7 @@ function seedContacts(count: number) {
       id: faker.datatype.uuid(),
       email: faker.internet.email(),
       firstName: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      birthday: faker.datatype.datetime(),
-      gender: faker.helpers.arrayElement(Object.values(PersonGender))
+      lastName: faker.name.lastName()
     });
   }
 
@@ -40,5 +38,12 @@ export class MockContactsClient implements IContactsClient {
       data: this.apiContacts.slice(skip, skip + take),
       totalCount: this.apiContacts.length
     };
+  }
+
+  getContactById(id: string): Promise<IPerson> {
+    throw new Error(`Getting contact by id ${id} not implemented.`);
+  }
+  updateContact(id: string, update: IPerson): Promise<IPerson> {
+    throw new Error(`Updating contact by id ${id} on ${update} not implemented.`);
   }
 }

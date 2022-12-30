@@ -12,4 +12,6 @@ export interface IContactListResult {
 
 export interface IContactsClient {
   contactList(opts: IContactListArgs): Promise<IContactListResult>; 
+  getContactById(id: string): Promise<IPerson>;
+  updateContact(id: string, update: IPerson): Promise<IPerson>;
 }
