@@ -20,6 +20,11 @@ function seedContacts(count: number) {
 
 const delay = (ms: number): Promise<void> => new Promise(res => setTimeout(res, ms));
 
+/*
+ * This is a mock of ContactsClient. It's supposed to provide exactly the same behavior
+ * so that when we have the API ready, we can just plug the actual ContactsClient implementation
+ * without no other app changes. (thus, all code here should be async as to emulate server fetch requests).
+ * */
 export class MockContactsClient implements IContactsClient {
   private readonly apiContacts: IPerson[];
 
@@ -30,7 +35,7 @@ export class MockContactsClient implements IContactsClient {
   async contactList(opts: IContactListArgs): Promise<IContactListResult> {
     const { pageNumber = 1, pageSize = 10 } = opts;
 
-    await delay(1000);
+    await delay(500);
     const skip = (pageNumber - 1) * pageSize;
     const take = pageSize;
 

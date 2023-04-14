@@ -40,18 +40,22 @@ export function useContactList(
   }, [paging, result]);
 
   const fetchCurrentPage = useCallback(async () => {
-    const res = await fetchContacts(paging.size * paging.currentPage, 1);
+    const res = await fetchContacts(paging.size, paging.currentPage);
 
-    setResult({
-      data: res.data,
-      totalCount: res.totalCount
+    setResult(({ data }) => {
+      return { 
+        data: [...data, ...res.data],
+        totalCount: res.totalCount
+      };
     });
 
     setLoading(false);
   }, [paging]);
 
+  const { currentPage } = paging;
+
   useEffect(() => {
-    if (paging.currentPage === 0) {
+    if (currentPage === 0) {
       goNextPage();
     } else {
       fetchCurrentPage();
