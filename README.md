@@ -17,11 +17,11 @@ $ turbo run dev
     .
     ├── ...
     ├── apps
-    │   ├── api       # Rest API using express and  routing-controllers
+    │   ├── api       # Rest API using express and routing-controllers
     │   ├── web       # Frontend application, bootstrapped with create-react-app and MaterialUI
     └── packages
-        ├── eslint-config-custom  # Rest API using express and  routing-controllers
-        ├── shared                # Shared code package between apps (models, interfaces etc)
+        ├── eslint-config-custom  # Shared eslint configs
+        ├── shared                # Shared code package(s) between apps (models, interfaces etc)
 
 ### Basic requirements
 
