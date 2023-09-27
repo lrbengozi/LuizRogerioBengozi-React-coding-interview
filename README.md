@@ -1,13 +1,27 @@
+This is a Monorepo project in development. The application will be a contact management service for a theoretical customer. 
 
-This is a React project bootstrapped with [`Create React App`](https://create-react-app.dev/) using the default Typescript template. 
+## Getting Started
 
-[`Material UI`](https://mui.com/material-ui/getting-started/overview/) is used as styling/UI-components library.
+```sh
+# 1. Install turbo (for monorepo management)
+$ npm install turbo --global
 
-### Getting Started
+# 2. Install dependencies
+$ npm i
 
-```bash
-npm install && npm start
+# 3. Run all project 'dev' task to start development servers
+$ turbo run dev
 ```
+
+### Folder Structure
+    .
+    ├── ...
+    ├── apps
+    │   ├── api       # Rest API using express and  routing-controllers
+    │   ├── web       # Frontend application, bootstrapped with create-react-app and MaterialUI
+    └── packages
+        ├── eslint-config-custom  # Rest API using express and  routing-controllers
+        ├── shared                # Shared code package between apps (models, interfaces etc)
 
 ### Basic requirements
 
@@ -15,16 +29,6 @@ npm install && npm start
 - NodeJS > 12
 - Your preferred browser (tested on Chrome and Firefox)
 
-### Folder Structure
-    .
-    ├── ...
-    ├── src                  
-    │   ├── components       # UI components following Atomic Design standards
-    │   ├── contexts         # React context's and providers
-    │   └── hooks            # Common application custom hooks
-    │   └── lib              # API Clients, models, constants, helpers...
-    └── ...
-    
 ### Linting and formatting
 
 The linting and formatting is done using eslint and prettier, configured using common industry standards.
