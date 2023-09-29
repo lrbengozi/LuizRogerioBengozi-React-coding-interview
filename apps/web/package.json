@@ -22,7 +22,6 @@
   },
   "scripts": {
     "dev": "craco start",
-    "build": "craco build",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },
   "eslintConfig": {

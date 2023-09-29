@@ -3,13 +3,13 @@ This is a Monorepo project in development. The application will be a contact man
 ## Getting Started
 
 ```sh
-# 1. Install turbo (for monorepo management)
-$ npm install turbo --global
-
-# 2. Install dependencies
+# 1. Install dependencies
 $ npm i
 
-# 3. Run all project 'dev' task to start development servers
+# 2. Build required packages
+$ npm build
+
+# 3. Run all projects 'dev' task to start development servers
 $ turbo run dev
 ```
 

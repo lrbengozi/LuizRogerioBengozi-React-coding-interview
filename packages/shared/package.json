@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "build": "rimraf _dist && tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "build": "rimraf _dist && tsc"
   },
   "exports": {
     ".": "./_dist/index.js",
