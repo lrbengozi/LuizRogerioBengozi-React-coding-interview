@@ -30,7 +30,10 @@ export const ContactListPage: React.FC = () => {
       <InfiniteScrollList<IContact>
         items={contacts.data}
         hasMore={hasMore}
-        loadMore={goNextPage}
+        loadMore={() => {
+          console.log('AAAA');
+          return goNextPage();
+        }}
         loading={fetching}
         ListContainer={ListContainer}
         renderItem={(p) => <ContactCard key={p.id} person={p} />}
